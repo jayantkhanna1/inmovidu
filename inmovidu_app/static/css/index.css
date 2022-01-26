@@ -11,12 +11,10 @@
     height: 95vh;
     padding-top: 40px;
 }
-#myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+body{
+    background-image: url('../images/background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #form_option{
     display: flex;
