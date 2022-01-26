@@ -1,0 +1,152 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!-- Jquery CDN -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <!-- Meta tags -->
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Title -->
+        
+        <title>Home</title>
+
+        <!-- Local style sheet -->
+
+        <link rel="stylesheet" href="{%static 'css/index.css'%}">
+
+        <!-- Google font (Roboto) cdn -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <video id="myVideo" autoplay muted loop src="{%static 'images/background.mp4'%}"></video>
+        <div id="form_container">
+            <div id="form_option">
+                <a id="hire_students" onclick="show_company_login()" href="javascript:void(0)">Hire Students</a>
+                <a id="get_a_job" onclick="show_student_login()" href="javascript:void(0)">Get Jobs </a>
+            </div>
+            <div id="all_forms">
+
+                <!-- Form 1 -->
+
+                <div id="form-1">
+                    <form id="form_login_company" enctype="multipart/form-data" method="POST" action="company_login">
+                        {%csrf_token%}
+                        <div class="user-box">
+                            <input type="text" name="id-company-login" required="">
+                            <label>Name or Email id</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="pass-company-login" required="">
+                            <label>Password</label>
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="Login">
+                        </div>
+                    </form>
+                    <div class="register">
+                        Don't have an account ?&nbsp;<a class="register_login" onclick="show_company_reg()" href="javascript:void(0)"> Register</a>
+                    </div>
+                </div>
+
+                <!-- Form 2 -->
+
+                <div id="form-2">
+                    <form id="form_login_student" enctype="multipart/form-data" method="POST" action="studentlogin">
+                        {%csrf_token%}
+                        <div class="user-box">
+                            <input type="text" name="id-student-login" required="">
+                            <label>Name or Email id</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="pass-student-login" required="">
+                            <label>Password</label>
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="Login">
+                        </div>
+                    </form>
+                    <div class="register">
+                        Don't have an account ?&nbsp;<a class="register_login" onclick="show_student_reg()" href="javascript:void(0)"> Register</a>
+                    </div>
+                </div>
+
+                <!-- Form 3 -->
+
+                <div id="form-3">
+                    <form id="form_company_register" enctype="multipart/form-data" method="POST" action="reg_comp">
+                        {%csrf_token%}
+                        <div class="user-box">
+                            <input type="text" name="name-company-reg" required="">
+                            <label>Name</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="email" name="id-company-reg" required="">
+                            <label>Email</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="pass-company-reg" required="">
+                            <label>Password</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="cpass-company-reg" required="">
+                            <label>Confirm Password</label>
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="Register">
+                        </div>
+                    </form>
+                    <div class="register">
+                        Already have an account ?&nbsp;<a class="register_login" onclick="show_company_login()" href="javascript:void(0)"> Login</a>
+                    </div>
+                </div>
+
+
+                <!-- Form 4 -->
+
+                <div id="form-4">
+                    <form id="form_student_register" enctype="multipart/form-data" method="POST" action="studentregister">
+                        {%csrf_token%}
+                        <div class="user-box">
+                            <input type="text" name="name-student-reg" required="">
+                            <label>Name</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="email" name="id-student-reg" required="">
+                            <label>Email</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="pass-student-reg" required="">
+                            <label>Password</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="cpass-student-reg" required="">
+                            <label>Confirm Password</label>
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="Register">
+                        </div>
+                    </form>
+                    <div class="register">
+                        Already have an account ?&nbsp;<a class="register_login" onclick="show_student_login()" href="javascript:void(0)"> Login</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- local js file -->
+        <script src="{%static 'js/index.js'%}"></script>
+    </body>
+</html>

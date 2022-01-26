@@ -1,0 +1,89 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- meta -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title -->
+
+    <title>Student</title>
+
+    <!-- Local Styling -->
+
+    <link rel="stylesheet" href="{%static 'css/student.css'%}">
+
+    <!-- Google font (Roboto) cdn -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+ 
+    <!-- Jquery CDN -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+</head>
+<body>
+    <div id="head">
+        <h2>Job Portal</h2>
+        <p>Best jobs matching your skills</p>
+        <a id="logout" href="home">Logout</a>
+    </div>
+    <div id="allcards">
+        {%for x in jobs%}
+        <div onclick="show_form('{{x.cname}}','{{x.position}}')" class="card">
+            <div class="head_card">
+                Click to Apply
+            </div>
+            <div class="body_card">
+                <p>Position : {{x.position}}</p>
+                <p>Requirements : {{x.position}}</p>
+                <p>Company name : {{x.cname}}</p>
+                <p>CTC : {{x.ctc}}</p>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    <div id="student_apply_form">
+        <div id="backbutton" onclick="jobs()">
+            <- back
+        </div>
+        <form enctype="multipart/form-data" method="POST" action="apply">
+            {%csrf_token%}
+            <div class="user-box">
+                <input type="text" readonly id="jobid" name="job_id" required="">
+                <label id="job_id_label">Your Job's Id (Do not change this)</label>
+            </div>
+            <div class="user-box">
+                <input type="text" readonly id="position" name="position" required="">
+                <label id="position_label">Your Position (Do not change this)</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="name" required="">
+                <label>Name</label>
+            </div>
+            <div class="user-box">
+                <input type="email" name="email" required="">
+                <label>Email</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="yop" required="">
+                <label>Your year of passout</label>
+            </div>
+            <div class="user-box">
+                <input id="resume" type="text" name="url" required="">
+                <label>Attach url of you resume after uploading it to google drive</label>
+            </div>
+            <div class="submit">
+                <input type="submit" value="Apply">
+            </div>
+        </form>
+    </div>
+    <script src="{%static 'js/student.js'%}"></script>
+</body>
+</html>

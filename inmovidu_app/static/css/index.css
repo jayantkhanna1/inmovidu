@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#form_container{
+    position: fixed;
+    right: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 50px;
+    height: 95vh;
+    padding-top: 40px;
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+#form_option{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+#form_option a{
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+#hire_students{
+    margin-right: 60px;
+    border: 2px solid #f20091;
+    background-color: #f20091;
+}
+#get_a_job{
+    color: #f7f7f7;;
+    border: 2px solid white;
+    background: linear-gradient(180deg,#0000 0,#fff3);
+}
+.user-box {
+    position: relative;
+}
+.user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    pointer-events: none;
+    transition: .5s;
+}
+.user-box input:focus~label,
+.user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #fff;
+    font-size: 16px;
+}
+#all_forms{
+    margin-top: 60px;
+}
+.submit input{
+    font-size:20px ;
+    background-color: #f20091;
+    width: 300px;
+    outline: none;
+    border: none;
+    padding: 20px;
+    color: white; 
+}
+.submit{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.register{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+}
+.register_login{
+    color: #f20091;
+    font-weight: 600;
+}
+#form-2,#form-3,#form-4{
+    display: none;
+}
+@media screen and (max-width: 500px) {
+    #form_option{
+        flex-direction: column;
+        align-items: center;
+    }
+    #form_option a{
+        text-align: center;
+        width: 200px;
+        margin-bottom: 20px;
+    }
+    #hire_students{
+        margin-right: 0;
+    }
+    #form_container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

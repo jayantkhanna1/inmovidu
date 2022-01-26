@@ -1,0 +1,1 @@
+web: gunicorn inmovidu_project.wsgi
