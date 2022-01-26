@@ -1,8 +1,3 @@
-import email
-from tempfile import NamedTemporaryFile
-from turtle import pos
-from unicodedata import name
-from django.http import HttpResponse
 from django.shortcuts import render , redirect
 from .models import company,job,student,apply
 # Create your views here.
